@@ -14,4 +14,5 @@ def config(filename="/Users/vsevolodlunev/PycharmProjects/СW6/database.ini", se
             'Section {0} is not found in the {1} file.'.format(section, filename))
     return db
 
+
 config()
