@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "сw6"
+version = "0.1.0"
+description = ""
+authors = ["VsevolodLunev"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+google-api-python-client = "^2.143.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
