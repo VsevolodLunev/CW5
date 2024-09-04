@@ -1,1 +1,4 @@
-import psycorg2
+import psycopg2
+
+
+def create_data_base()
