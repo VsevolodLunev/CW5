@@ -24,8 +24,10 @@ def create_database(database_name: str, params: dict) -> None:
                 employer_name text not null,
                 employer_area TEXT not null,
                 url TEXT,
-                open_vacancies INTEGER
-            )
+                open_vacancies INTEGER,
+                
+                CONSTRAINT pk_employers_employer_id PRIMARY KEY(employer_id)
+            );
         """)
 
     with conn.cursor() as cur:
@@ -36,8 +38,12 @@ def create_database(database_name: str, params: dict) -> None:
                 vacancy_area VARCHAR,
                 salary INTEGER,
                 employer_id INTEGER,
-                vacancy_url VARCHAR
-            )
+                vacancy_url VARCHAR,
+                
+                CONSTRAINT pk_vacancy_vacancy_id PRIMARY KEY(vacancy_id)
+            );
+            ALTER TABLE vacancy ADD CONSTRAINT fk_vacancy_employers FOREIGN KEY(employer_id) 
+            REFERENCES employers(employer_id)
         """)
 
     conn.commit()
