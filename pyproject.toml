@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "сw6"
 version = "0.1.0"
-description = ""
+descrpiption = ""
 authors = ["VsevolodLunev"]
 readme = "README.md"
 
