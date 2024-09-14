@@ -4,8 +4,8 @@ import pymysql
 
 class TestSQLQueries(unittest.TestCase):
 
-    def test_select_all_employees(self):
-        conn = pymysql.connect(host='localhost', user='postgres', password='', db='hh_db')
+    def test_get_companies_and_vacancies_count(self):
+        conn = pymysql.connect(host='localhost', user='postgres', password='', db='hh_db', port='5432')
         cursor = conn.cursor()
         cursor.execute("""
         SELECT employer_name, COUNT(vacancies.employer_id) FROM employers INNER JOIN vacancies USING (employer_id)
@@ -25,7 +25,7 @@ class TestSQLQueries(unittest.TestCase):
         self.assertEqual(result, expected)
         conn.close()
 
-    def test_prog_get_all_vacancies(self):
+    def test_get_all_vacancies(self):
         assert True
 
     def test_get_avg_salary(self):
